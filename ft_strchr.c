@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 20:12:30 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/23 20:56:32 by fde-jesu         ###   ########.fr       */
+/*   Created: 2023/04/23 21:05:21 by fde-jesu          #+#    #+#             */
+/*   Updated: 2023/04/23 21:07:47 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+cha	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
-	char *sorc;
+	unsigned char	*str;
 
-	sorc = (char *)src;
+	str = (unsinged char *)s;
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(sorc));
-	while (sorc[i] && i < (size - 1))
+	while (str[i])
 	{
-		dst[i] = sorc[i];
-		i++;	
+		if (str[i] == c)
+			return (&str[i]);
+		i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(sorc));
+	return (0);
 }
-
-
-
-int main()
-{
-        char name1 [] = "fernando";
-        char name2 [10];
-        //unsigned int size;
-        //size = 30;
-        ft_strlcpy(name2,name1,10);
-        printf("%s",name2);
-
-        return 0;
-}
-

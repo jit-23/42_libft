@@ -6,7 +6,7 @@
 /*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 00:36:25 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/23 19:54:38 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/23 21:10:25 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char    *ft_strrchr(const char *s, int c)
         char    *ptr;
         ptr = (char *)s;
         i = ft_strlen(ptr);
-        while (i >= 0)
+	while (i > 0)
         {
                 if (ptr[i] == c)
                         return (&ptr[i]);
@@ -30,7 +30,7 @@ char    *ft_strrchr(const char *s, int c)
 int main()
 {
         char *name = "fernando";
-        char a = 'a';
+        char a = 'z';
         char *ptr;
         ptr = strrchr(name, a);
         printf("%s", ptr);

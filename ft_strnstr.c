@@ -6,7 +6,7 @@
 /*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 14:53:52 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/21 15:46:25 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/23 21:11:43 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (hay);
 
-}
+}/*
 int main()
 {
 	char name[] = "fernando";
 	char name2[] = "er";
 	printf("%s", ft_strnstr(name,name2,5));
 	return (0);
-}
+}*/
