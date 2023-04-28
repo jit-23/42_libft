@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:51:01 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/21 18:52:10 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/23 21:57:15 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char *ptr;
+	char	*ptr;
 
 	ptr = (char *)s;
 	i = 0;

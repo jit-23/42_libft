@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 20:12:30 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/23 20:56:32 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/25 19:15:45 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	char *sorc;
+	char	*sorc;
 
 	sorc = (char *)src;
 	i = 0;
@@ -24,23 +24,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	while (sorc[i] && i < (size - 1))
 	{
 		dst[i] = sorc[i];
-		i++;	
+		i++;
 	}
 	dst[i] = '\0';
 	return (ft_strlen(sorc));
 }
-
-
-
-int main()
-{
-        char name1 [] = "fernando";
-        char name2 [10];
-        //unsigned int size;
-        //size = 30;
-        ft_strlcpy(name2,name1,10);
-        printf("%s",name2);
-
-        return 0;
-}
-

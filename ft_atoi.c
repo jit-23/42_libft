@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:47:30 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/21 16:44:28 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:33:37 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,24 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sinal;
-	int	result;
+	int				i;
+	int				sinal;
+	int				result;
 	unsigned char	*str;
 
 	result = 0;
 	sinal = 1;
 	i = 0;
 	str = (unsigned char *)nptr;
-	if (str[0] == '-')
+	while (str[i] && ((str[i] >= 7 && str[i] <= 13) || str[i] == 32))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sinal = -sinal;
+		if (str[i] == '-')
+			sinal = -sinal;
 		i++;
 	}
-	if (str[0] == '+')
-		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 		result = result * 10 + str[i++] - '0';
 	return (sinal * result);
-
 }
-/*
-int main()
-{
-	//printf("%d", ft_atoi("234"));
-	printf("%d", ft_atoi("-2147483648"));
-
-	return (0);
-}*/

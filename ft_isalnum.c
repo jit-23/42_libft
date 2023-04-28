@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/23 22:14:44 by fde-jesu          #+#    #+#             */
+/*   Updated: 2023/04/23 22:14:58 by fde-jesu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include<stdio.h>
-#include<ctype.h>
+#include"libft.h"
+
 int	ft_isalnum(int a)
 {
 	if (a >= '0' && a <= '9')
@@ -11,11 +22,3 @@ int	ft_isalnum(int a)
 		return (1);
 	return (0);
 }
-/*
-int main()
-{
-
-	printf("%d.", ft_isalnum('y'));
-	printf("%d", isalnum('y'));
-	return (0);
-}*/

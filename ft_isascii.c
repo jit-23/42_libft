@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:47:17 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/21 18:48:37 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/23 22:16:26 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 int	ft_isascii(int c)
 {
-        if (c >= 0 && c <= 127)
-                return (1);
-        return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
-int main()
-{
-        printf("%d","t");
-        return (0);
-}
-

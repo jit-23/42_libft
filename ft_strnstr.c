@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 14:53:52 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/23 21:11:43 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:17:49 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (hay[i] && i < len)
 	{
 		j = 0;
-		while (hay[i + j] == needle[j] && needle[j] && hay[i + j] && i + j < len)
+		while (hay[i + j] == needle[j] && needle[j] && i + j < len)
 		{
 			j++;
 		}
@@ -36,13 +36,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			return (&hay[i]);
 		i++;
 	}
-	return (hay);
-
-}/*
-int main()
-{
-	char name[] = "fernando";
-	char name2[] = "er";
-	printf("%s", ft_strnstr(name,name2,5));
-	return (0);
-}*/
+	return (NULL);
+}

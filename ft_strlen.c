@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-jesu <fde-jesu@student.42porto.co      +#+  +:+       +#+        */
+/*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:49:06 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/23 19:39:08 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2023/04/23 22:05:43 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,4 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
-}/*
-int main()
-{
-	printf("%d",ft_strlen("name"));
-	return (0);
-}*/
+}

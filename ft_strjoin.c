@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 17:59:28 by fde-jesu          #+#    #+#             */
-/*   Updated: 2023/04/23 22:07:13 by fde-jesu         ###   ########.fr       */
+/*   Created: 2023/04/26 18:56:44 by fde-jesu          #+#    #+#             */
+/*   Updated: 2023/04/26 20:06:24 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	size_t			len;
-	unsigned char	*ptr;
-	char			*str;
+	size_t	i;
+	char	*str1;
+	char	*str2;
+	char	*ptr;
 
-	str = (char *)s;
-	len = ft_strlen(str);
 	i = 0;
-	ptr = (unsigned char *)malloc(sizeof(unsigned char *) * len + 1);
-	if (ptr == NULL)
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	ptr = (char *) malloc(sizeof(char) * (ft_strlen(str1)
+				+ ft_strlen(str2) + 1));
+	if (!ptr)
 		return (0);
-	while (i < len)
+	ft_memcpy(ptr, str1, ft_strlen(str1));
+	while (str2[i])
 	{
-		ptr[i] = str[i];
+		ptr[ft_strlen(str1) + i] = str2[i];
 		i++;
 	}
-	ptr[i] = '\0';
+	ptr[ft_strlen(str1) + i] = '\0';
 	return (ptr);
 }
