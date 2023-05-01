@@ -61,11 +61,7 @@ char *ft_strtrim(char const *s1, char const *set)
 			{
 				l = 0;
 				while(str[i + l] == look[j + l])
-				{
-					// if (look[j + l] == '\0')
-					// 	i += l;
 					l++;
-				}
 				if (look[j + l] == '\0')
 				{
 					i += l;

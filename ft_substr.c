@@ -16,11 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 	size_t	i;
-	char	*src;
 	size_t	len_s;
 
-	src = (char *)s;
-	len_s = ft_strlen(src);
+	len_s = ft_strlen(s);
 	i = 0;
 	if (len_s < start)
 	{
@@ -33,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	while (i < len)
 	{
-		ptr[i] = src[start + i];
+		ptr[i] = s[start + i];
 		i++;
 	}
 	ptr[i] = '\0';
