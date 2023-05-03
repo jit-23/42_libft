@@ -12,80 +12,39 @@
 
 #include "libft.h"
 
-
-
-static	int	set_n(char *s1, char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i, j,count;
-	i = j = count = 0;
+	int		i;
+	int		j;
+	char	*str;
 
-	while (s1[i])
-	{
-		j = 0;
-		while (s1[i + j] == set[j] && set[j])
-		{
-			j++;
-		}
-		if (set[j] == '\0')
-			count++; 
-		i++;
-	}
-	return (count);
-}
-
-char *ft_strtrim(char const *s1, char const *set)
-{
-	size_t	i;
-	size_t	j;
-	size_t	l;
-	char *str;
-	char *look;
-	char	*ptr;
-	int n_set;
-
-	i = j = l = 0;
-	
-	str = (char *)s1;
-	look = (char *)set;
-	n_set = set_n(str, look); // number of recurenses of the string to trim
-
-	ptr = (char *)malloc((sizeof(char) * (ft_strlen(str)) - ((ft_strlen(look) * n_set) + 1)));
-	if (!ptr)
+	if (!s1 || !set)
 		return (0);
-	while(str[i])
-	{
-		j = 0;
-		while (look[j])
-		{
-			if (str[i] == look[j])
-			{
-				l = 0;
-				while(str[i + l] == look[j + l])
-					l++;
-				if (look[j + l] == '\0')
-				{
-					i += l;
-					ptr[i] = str[i];
-				}	 
-			}
-			//ptr[i] = str[i];
-			j++;
-		}
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[i]) != NULL && i < j)
 		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	if (i < j)
+		strdup(set);
+	while (ft_strchr(set, s1[j]) != NULL && j >= 0)
+		j--;
+	str = (char *)malloc(sizeof(char) * (j - i) + 2);
+	if (!str)
+		return (0);
+	printf("%lu", sizeof(str));
+	ft_strlcpy(str, &s1[i], j - i + 2);
+	return (str);
 }
 
-int main()
-{
-	char s1[] = "daedaedaedaedaedae";// 6 - e/a;
-	char s2[] = "ae";
-	char	*ptr;
-	ptr = ft_strtrim(s1,s2);
-	int i = 0;
-	while(i < 10)
-		printf("%d\n",ptr[i++]);
-	free(ptr);
-	return (0);
-}
+// int main()
+// {
+// 	char s1[] = "XXXFERXXX";
+// 	char s2[] = "XXX";
+// 	char	*ptr;
+// 	ptr = ft_strtrim(s1,s2);
+// 	int i = 0;
+// 	while(i < 10)
+// 		printf("%c\n",ptr[i++]);
+// 	free(ptr);
+// 	return (0);
+// }
