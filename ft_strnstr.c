@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	needle = (char *)little;
 	i = 0;
 	j = 0;
-	if (!needle)
+	if (ft_strlen(needle) == 0 || hay == little)
 		return (hay);
 	while (hay[i] && i < len)
 	{

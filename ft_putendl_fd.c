@@ -24,13 +24,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-
-//  int main()
-//  {
-//     char string[] = "there is a tring here";
-//     int fd;
-//     fd = open("somefile.txt", O_RDWR);
-// 	ft_putendl_fd(string, fd);
-//     close(fd); 
-//     return (0);
-//  }

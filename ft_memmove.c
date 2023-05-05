@@ -16,26 +16,27 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char	*str1;
 	unsigned char	*str2;
-	unsigned char	*ptr;
 	size_t			i;
 
 	str1 = (unsigned char *)src;
 	str2 = (unsigned char *)dst;
 	i = 0;
-	ptr = (unsigned char *)malloc(n * sizeof(unsigned char *));
-	if (ptr == NULL)
-		return (0);
-	while (i < n)
+	if (!dst && !src)
+		return (dst);
+	if (dst > src)
 	{
-		ptr[i] = str1[i];
-		i++;
+		while (n-- > 0)
+		{
+			str2[n] = str1[n];
+		}
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		str2[i] = ptr[i];
-		i++;
+		while (i < n)
+		{
+			str2[i] = str1[i];
+			i++;
+		}
 	}
-	free(ptr);
-	return (dst);
+	return (str2);
 }

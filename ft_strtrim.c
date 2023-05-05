@@ -22,29 +22,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	i = 0;
 	j = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[i]) != NULL && i < j)
+	while (ft_strchr(set, s1[i]) && i <= j)
 		i++;
-	if (i < j)
-		strdup(set);
-	while (ft_strchr(set, s1[j]) != NULL && j >= 0)
+	if (i > j)
+		return (ft_strdup((s1 + j + 1)));
+	while (ft_strchr(set, s1[j]) && j >= 0)
 		j--;
 	str = (char *)malloc(sizeof(char) * (j - i) + 2);
 	if (!str)
 		return (0);
-	printf("%lu", sizeof(str));
-	ft_strlcpy(str, &s1[i], j - i + 2);
+	ft_memcpy(str, &s1[i], (j - i) + 2);
+	str[(j - i) + 1] = '\0';
 	return (str);
 }
-
-// int main()
-// {
-// 	char s1[] = "XXXFERXXX";
-// 	char s2[] = "XXX";
-// 	char	*ptr;
-// 	ptr = ft_strtrim(s1,s2);
-// 	int i = 0;
-// 	while(i < 10)
-// 		printf("%c\n",ptr[i++]);
-// 	free(ptr);
-// 	return (0);
-// }

@@ -25,11 +25,23 @@ FUN = ft_isalpha.c \
       ft_memmove.c \
       ft_memcpy.c \
       ft_strlcpy.c \
+      ft_strlcat.c \
       ft_toupper.c \
       ft_tolower.c \
       ft_strchr.c \
+      ft_strrchr.c \
+      ft_strncmp.c \
+      ft_memchr.c \
+      ft_memcmp.c \
+      ft_strnstr.c \
+      ft_atoi.c \
+      ft_calloc.c \
+      ft_strdup.c \
       ft_split.c \
       ft_substr.c \
+      ft_strjoin.c \
+      ft_strtrim.c \
+      ft_split.c \
       ft_strmapi.c \
       ft_striteri.c \
       ft_putchar_fd.c \
@@ -38,19 +50,23 @@ FUN = ft_isalpha.c \
       ft_putnbr_fd.c \
       ft_itoa.c 
 
-BONUS_FUN = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+FUN_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 			ft_lstlast.c ft_lstadd_back.c ft_lstclear.c ft_lstdelone.c \
 			ft_lstiter.c ft_lstmap.c
 OBJ = ${FUN:.c=.o}
-OBJ_BONUS = ${BONUS_FUN:.c=.o}
+OBJ_BONUS = ${FUN_BONUS:.c=.o}
 
 all: $(NAME)
+
 $(NAME):
-	cc -g $(FLAGS) $(OPTION) $(FUN) $(BONUS_FUN)
-	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
+	cc -g $(FLAGS) $(OPTION) $(FUN) $(FUN_BONUS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+
+bonus:	${OBJ_FUN} ${OBJ}
+		ar rcs ${NAME} ${OBJ} ${OBJ_BONUS}
 clean:
-	rm -f $(OBJ)
-	rm -f $(OBJ_BONUS)
+	rm -f $(OBJ) $(OBJ_BONUS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
+.PHONY: all clean fclean re
